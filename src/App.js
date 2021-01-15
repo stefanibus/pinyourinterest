@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Switch, Route, NavLink, Redirect } from "react-router-dom";
 import axios from "axios"; 
+import AllPosts from "./views/AllPosts";
+import BestRatedPosts from "./views/BestRatedPosts";
 import './App.css';
 
  
@@ -17,8 +19,18 @@ export default function App() {
       .catch((error) => console.error(error));
   }, []);
   console.log(cars);
+
+
   return (
     <div className="App"> 
+      <Switch>
+        <Route path="/allposts">
+          <AllPosts />
+        </Route>
+        <Route path="/bestratedposts">
+          <BestRatedPosts />
+        </Route>
+      </Switch>
   
       {cars.map((iteration, index) => (
         <div key={index}>
