@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route, NavLink, Redirect } from "react-router-dom";
+import { Switch, Route, NavLink } from "react-router-dom";
 import axios from "axios"; 
-import AllPosts from "./views/AllPosts";
+import AllPosts from "./views/AllPosts.js";
 import BestRatedPosts from "./views/BestRatedPosts";
 import './App.css';
 
