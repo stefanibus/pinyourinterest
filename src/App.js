@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route, NavLink } from "react-router-dom";
+import { Switch, Route, NavLink, Redirect } from "react-router-dom";
 import axios from "axios";
 import AllPosts from "./views/AllPosts.js";
 import BestRatedPosts from "./views/BestRatedPosts";
@@ -36,6 +36,9 @@ export default function App() {
         </Route>
         <Route path="/bestratedposts">
           <BestRatedPosts />
+        </Route>
+        <Route exact path="/">
+          <Redirect to="/allposts" />
         </Route>
       </Switch>
 
