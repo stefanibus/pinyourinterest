@@ -3,6 +3,7 @@ import { Switch, Route, NavLink, Redirect } from "react-router-dom";
 import axios from "axios";
 import AllPosts from "./views/AllPosts.js";
 import BestRatedPosts from "./views/BestRatedPosts";
+import PageNotFound from "./views/404";
 import "./App.css";
 
 export default function App() {
@@ -40,6 +41,9 @@ export default function App() {
         <Route exact path="/">
           <Redirect to="/allposts" />
         </Route>
+        <Route path="*">
+          <PageNotFound />
+        </Route> 
       </Switch>
 
       {cars.map((iteration, index) => (
