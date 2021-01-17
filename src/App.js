@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route, NavLink, Redirect } from "react-router-dom";
+import { Switch, Route,   Redirect } from "react-router-dom";
 import axios from "axios";
 import AllPosts from "./views/AllPosts.js";
 import BestRatedPosts from "./views/BestRatedPosts";
-import PageNotFound from "./views/404";
+import PageNotFound from "./views/404"; 
+import NavBar from "./component/NavBar"; 
 import "./App.css";
+
+ 
 
 export default function App() {
   const [cars, setCars] = useState([]);
@@ -19,18 +22,13 @@ export default function App() {
       })
       .catch((error) => console.error(error));
   }, []);
-  console.log(cars);
+ // console.log(cars);
 
   return (
     <div className="App">
-      <nav>
-        <NavLink className="link" to="/allposts">
-          All Posts
-        </NavLink>
-        <NavLink className="link" to="/bestratedposts">
-          Best Rated Pots
-        </NavLink>
-      </nav>
+ 
+      <NavBar/> 
+    
       <Switch>
         <Route path="/allposts">
           <AllPosts />
