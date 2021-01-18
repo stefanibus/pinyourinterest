@@ -4,7 +4,7 @@ import axios from "axios";
 import AllPosts from "./views/AllPosts.js";
 import BestRatedPosts from "./views/BestRatedPosts";
 import PageNotFound from "./views/404"; 
-import NavBar from "./component/NavBar"; 
+import NavBar from "./components/NavBar"; 
 import "./App.css";
 
  
