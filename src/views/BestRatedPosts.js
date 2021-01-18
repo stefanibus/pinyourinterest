@@ -4,10 +4,16 @@ const BestRatedPosts = () => {
   // const { Futureuse } = useParams();
 
   return (
-    <div className="bestratedposts">
-      <div>irgendwas</div>
-      Hello-BestRatedPosts
-    </div>
+    <div className="bestratedposts  container  centerPage">
+     <div>
+      <h1>BestRatedPosts</h1>
+      <div>
+      	Theese are your <b>five favourite  Posts</b>.
+      	<br/> 
+      	To see <b>all</b> your Posts please visit the navigation above.  
+      </div>
+     </div> 
+    </div>  	
   );
 };
 export default BestRatedPosts;
