@@ -51,6 +51,9 @@ const NavBar = () => { return (
               <div className="nav-link">UserLogin</div>
           </LinkContainer> 
  
+          <div><a className="nav-link" href="https://trello.com/b/wcvE9jJZ/contentful-react" target="_blank">Trello Reference</a></div>
+          <div><a className="nav-link" href="https://github.com/stefanibus/pinyourinterest/" target="_blank">GitHub</a></div>
+ 
       </Nav>
   </Navbar.Collapse>
   </Navbar>);
