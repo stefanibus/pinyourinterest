@@ -9,9 +9,9 @@ const Formular = () => {
     <div>
       Hier ist das <span>Formular</span>
       <Form inline>
-        {/* <Form.Label htmlFor="inlineFormInputName2" srOnly>
+        <Form.Label htmlFor="inlineFormInputName2" srOnly>
           Name
-        </Form.Label> */}
+        </Form.Label>
         <Form.Control
           className="mb-2 mr-sm-2"
           id="inlineFormInputName2"
