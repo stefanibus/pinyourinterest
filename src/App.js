@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Switch, Route,   Redirect } from "react-router-dom";
 import axios from "axios";
+/* views */
 import AllPosts from "./views/AllPosts.js";
 import BestRatedPosts from "./views/BestRatedPosts";
 import PageNotFound from "./views/404"; 
+/* components */
 import NavBar from "./components/NavBar"; 
+/* styles */
 import "./App.css";
+/* bootstrap components */
+import Container from 'react-bootstrap/Container';
 
  
 
@@ -27,7 +32,7 @@ export default function App() {
   return (
     <div className="App">
  
-      <NavBar/> 
+      <NavBar /> 
     
       <Switch>
         <Route path="/allposts">
