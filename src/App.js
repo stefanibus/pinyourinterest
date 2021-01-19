@@ -9,8 +9,6 @@ import PageNotFound from "./views/404";
 import NavBar from "./components/NavBar"; 
 /* styles */
 import "./App.css";
-/* bootstrap components */
-import Container from 'react-bootstrap/Container';
 
  
 
