@@ -19,6 +19,10 @@ const Post = ({ post }) => {
 /* rating */
   let rating = 0;
   if (post.fields.rating) rating=post.fields.rating
+/* user */
+  let user = "super default user";
+  /* TODO: find out which user has this id and use the name instead of this id */
+  if (post.fields.userref.sys.id) user=post.fields.userref.sys.id;
 
 
 
@@ -31,6 +35,7 @@ const Post = ({ post }) => {
           {description}
         </Card.Text>
         <Card.Text>{rating}</Card.Text>
+        <Card.Text>{user}</Card.Text>
       </Card.ImgOverlay>
     </Card>
   );
