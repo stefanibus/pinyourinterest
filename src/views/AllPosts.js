@@ -8,7 +8,7 @@ import PostGrid from "../components/PostGrid";
 
 const AllPosts = () => {
   // const { Futureuse } = useParams();
-  const listPosts = [];
+  const [postsDataForUsers, setPostsDataForUsers] = useState([]);
 
   return (
     <Container id="allposts">
@@ -23,8 +23,8 @@ const AllPosts = () => {
       </Row>
       <Row>
         {/* empty Array "THERE ARE NO POSTS" will be desplayed */}
-        {listPosts===[]
-        ? <PostGrid listPosts={listPosts}/>
+        {postsDataForUsers===[]
+        ? <PostGrid listPosts={postsDataForUsers}/>
         : <div>THERE ARE NO POSTS</div>
         }
       </Row>
