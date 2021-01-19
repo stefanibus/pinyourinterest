@@ -4,27 +4,11 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 /* import Col from 'react-bootstrap/Col'; */
 /* https://react-bootstrap.github.io/components/cards/#card-columns */
-import CardColumns from "react-bootstrap/CardColumns";
-import Post from "../components/Post";
+import PostGrid from "../components/PostGrid";
 
 const AllPosts = () => {
   // const { Futureuse } = useParams();
-  const [listPosts, setListPosts] = useState([]);
-
-  useEffect(() => {
-    listAllPosts();
-  }, [])
-
-
-
-  /* maps all Posts in a variable listPosts */
-  const listAllPosts = () => {
-    setListPosts(
-      listPosts.map((post, index) => (
-        <Post post={post} key={index} />
-      ))
-    );
-  }
+  const listPosts = [];
 
   return (
     <Container id="allposts">
@@ -38,12 +22,11 @@ const AllPosts = () => {
         </div>
       </Row>
       <Row>
-        {/* is there on or more Posts in the List of Post show all post. if not show nothing*/}
-        { listPosts 
-          ? <CardColumns>{listPosts}</CardColumns> 
-          : <div>THERE ARE NO POSTS</div> 
+        {/* empty Array "THERE ARE NO POSTS" will be desplayed */}
+        {listPosts===[]
+        ? <PostGrid listPosts={listPosts}/>
+        : <div>THERE ARE NO POSTS</div>
         }
-        
       </Row>
     </Container>
 
