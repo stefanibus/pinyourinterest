@@ -2,17 +2,35 @@ import react from "react";
 import Card from 'react-bootstrap/Card';
 
 
-const Post = () => {
+const Post = ({ post }) => {
+/* title */
+  let title = "super awesome default title";
+  if (post.fields.title) title=post.fields.title;
+/* description */
+  let description = "super awesome default description";
+  if (post.fields.description) description=post.fields.description
+/* image */
+  let image = "holder.js/100px270";
+  if (post.fields.webimage) {
+    image = post.fields.webimage
+  } else if (post.fields.file) {
+    image = post.fields.file.fileName
+  }
+/* rating */
+  let rating = 0;
+  if (post.fields.rating) rating=post.fields.rating
+
+
+
   return (
     <Card className="bg-dark text-white">
-      <Card.Img src="holder.js/100px270" alt="Card image" />
+      <Card.Img src={image} alt={title} />
       <Card.ImgOverlay>
-        <Card.Title>Card title</Card.Title>
+        <Card.Title>{title}</Card.Title>
         <Card.Text>
-          This is a wider card with supporting text below as a natural lead-in to
-          additional content. This content is a little bit longer.
+          {description}
         </Card.Text>
-        <Card.Text>Last updated 3 mins ago</Card.Text>
+        <Card.Text>{rating}</Card.Text>
       </Card.ImgOverlay>
     </Card>
   );
