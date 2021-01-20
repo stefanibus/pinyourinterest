@@ -3,8 +3,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import axios from "axios";
 import AllPosts from "./views/AllPosts.js";
 import BestRatedPosts from "./views/BestRatedPosts";
-import PageNotFound from "./views/404";
-import NavBar from "./component/NavBar";
+import PageNotFound from "./views/404"; 
+import NavBar from "./components/NavBar"; 
 import "./App.css";
 import Formular from "./component/Formular";
 
@@ -45,7 +45,7 @@ export default function App() {
 
       {cars.map((iteration, index) => (
         <div key={index}>
-          Car <img src={iteration.fields.image} />
+          {/* Car <img src={iteration.fields.image} /> */}
         </div>
       ))}
     </div>

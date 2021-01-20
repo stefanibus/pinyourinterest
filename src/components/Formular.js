@@ -1,12 +1,9 @@
-import react from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import FormControl from "react-bootstrap/FormControl";
 
 const Formular = () => {
   return (
     <div>
-      Hier ist das <span>Formular</span>
       <Form inline>
         <Form.Label htmlFor="inlineFormInputName2" srOnly>
           Name
