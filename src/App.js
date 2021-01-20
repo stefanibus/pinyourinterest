@@ -6,7 +6,7 @@ import BestRatedPosts from "./views/BestRatedPosts";
 import PageNotFound from "./views/404"; 
 import NavBar from "./components/NavBar"; 
 import "./App.css";
-import Formular from "./component/Formular";
+import Formular from "./components/Formular";
 
 export default function App() {
   const [cars, setCars] = useState([]);
