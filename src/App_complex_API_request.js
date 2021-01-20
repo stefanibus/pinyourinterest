@@ -13,16 +13,57 @@ export default function App() {
     const [userData, setUserData] = useState([]);
     const [postsDataForUsers, setPostsDataForUsers] = useState([]);
 
+
+     // onpageLoad WHY is getAllUserData  running although it is not triggered !? 
+
+
+    const getAllUserData = async () => {  
+        const getUserData = await axios
+            .get(
+                "https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=users"
+            )
+            .then((response) => {
+                console.log(' example for a unique UserID: response.data.items[1].sys.id')
+                console.log(response.data.items[1].sys.id)
+                return response.data.items;
+            })
+            .catch((error) => console.error(error));
+            // console.log('grab getUserData which is the UserData from all users: ');
+            // console.log(getUserData); 
+
+            // WHY CAN I NOT DO THIS
+            // getArrayOfUserIDs(getUserData) 
+
+
+        return  getUserData ;
+    }
+
+
+
+
+    const getArrayOfUserIDs =  async (myUserArray) => { 
+       // 
+       console.log(myUserArray);
+        const result = myUserArray.map(iteration => { 
+            return iteration.sys.id 
+        });    
+        return result; 
+    } 
+
+  //
+
   
- 
 
 
-    const getAllPostsFromUser = async () => {
-        let getURLStatic = "https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=posts&fields.userref.sys.id[all]=14U1y0dzbaaqOkvjr9kW4T,4CrLLnhKykpOV9fu2v7Odg,7gusLBhWbTDHN2ax00HnEk,6eCJKi4fMxQPQZCBRUF1dh,YrNbyp3ac9ibMecerzmv1" ;
- 
+
+    const getAllPostsFromUser = async (i) => {
+        let AddAllUserIDsToRequestURL = i;
+        let getURLDynamic = "https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=posts&fields.userref.sys.id[in]=" + AddAllUserIDsToRequestURL;
+  
         const callPosts = await axios
             .get(
-                getURLStatic
+                getURLDynamic
+                //  getURLStatic
             )
             // .then((response) => {
             //     return (response);
@@ -37,10 +78,8 @@ export default function App() {
 
 
     const logFunction = () => { 
-        // console.log('postsDataForUsers   )): ');
-        // console.log(postsDataForUsers); 
-        console.log('callPosts   )): ');
-        console.log(callPosts); 
+        console.log('postsDataForUsers   )): ');
+        console.log(postsDataForUsers); 
 
         // console.log('postsDataForUsers.data.items (all POSTS are 21 Items?!   ANSCHEINEND ALLE USER  )): ');
         // console.log(postsDataForUsers.data.items); 
@@ -86,20 +125,14 @@ export default function App() {
         {/*  <button onClick={ () => { console.log('getArrayOfUserIDs(getAllUserData)'); getArrayOfUserIDs(getAllUserData); }} >  getArrayOfUserIDs(getAllUserData)  </button>  <br/>
         */}
 
-   {/*       <button onClick={ () => { console.log('getAllUserData()'); getAllUserData(); }} >  getAllUserData()  </button>  <br/>
-    */}
+          <button onClick={ () => { console.log('getAllUserData()'); getAllUserData(); }} >  getAllUserData()  </button>  <br/>
+    
        {/*   <button onClick={ () => { console.log('myUserArray');  console.log(myUserArray);   }} > console.log('myUserArray');  </button>  <br/>
     */}
          {/* <button onClick={ () => { console.log('getArrayOfUserIDs(getUserData)'); getArrayOfUserIDs(getUserData); }} >  getArrayOfUserIDs(getAllUserData)  </button>  <br/>
     */}
     
-          <button onClick={ () => { console.log('getAllPostsFromUser()'); getAllPostsFromUser(); }} >  getAllPostsFromUser() </button>  <br/>
-
-          <button onClick={ () => { 
-            console.log('logFunction()'); 
-            // logFunction(); 
-            }} 
-            >  logFunction() </button>  <br/>
+          <button onClick={ () => { console.log('logFunction()'); logFunction(); }} >  logFunction() </button>  <br/>
 
             
 
