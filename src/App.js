@@ -34,8 +34,8 @@ export default function App() {
   };
 
   const logFunction = () => {
-    console.log("postsDataForUsers   )): ");
-    console.log(postsDataForUsers);
+    console.log("userData   )): ");
+    console.log(userData);
 
     console.log("postsDataForUsers  ");
     console.log(postsDataForUsers);
@@ -67,7 +67,7 @@ export default function App() {
       <Formular />
       <Switch>
         <Route path="/allposts">
-          <AllPosts />
+          <AllPosts postsDataForUsers={postsDataForUsers} />
         </Route>
         <Route path="/bestratedposts">
           <BestRatedPosts />
