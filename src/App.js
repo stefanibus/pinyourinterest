@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import axios from "axios";
+/* views */
 import AllPosts from "./views/AllPosts.js";
 import BestRatedPosts from "./views/BestRatedPosts";
 import PageNotFound from "./views/404"; 
+/* components */
 import NavBar from "./components/NavBar"; 
-import "./App.css";
 import Formular from "./components/Formular";
+/* styles */
+import "./App.css";
 
 export default function App() {
   const [cars, setCars] = useState([]);
