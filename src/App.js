@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route,   Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import axios from "axios";
 /* views */
 import AllPosts from "./views/AllPosts.js";
@@ -7,10 +7,9 @@ import BestRatedPosts from "./views/BestRatedPosts";
 import PageNotFound from "./views/404"; 
 /* components */
 import NavBar from "./components/NavBar"; 
+import Formular from "./components/Formular";
 /* styles */
 import "./App.css";
-
- 
 
 export default function App() {
   const [cars, setCars] = useState([]);
@@ -25,13 +24,13 @@ export default function App() {
       })
       .catch((error) => console.error(error));
   }, []);
- // console.log(cars);
+  // console.log(cars);
 
   return (
     <div className="App">
- 
-      <NavBar /> 
-    
+      <NavBar />
+      <Formular />
+
       <Switch>
         <Route path="/allposts">
           <AllPosts />
@@ -44,12 +43,12 @@ export default function App() {
         </Route>
         <Route path="*">
           <PageNotFound />
-        </Route> 
+        </Route>
       </Switch>
 
       {cars.map((iteration, index) => (
         <div key={index}>
-          Car <img src={iteration.fields.image} />
+          {/* Car <img src={iteration.fields.image} /> */}
         </div>
       ))}
     </div>
