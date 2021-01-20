@@ -13,7 +13,7 @@ const PageNotFound = () => { return (
  		    	<Link to="/">
 	            Visit All your Posts here:
 	 			<br/>
-	            	<img src={src}  />
+	            	<img alt="404" src={src}  />
 	            </Link>
  			</h1> 
  		    <h3>
