@@ -22,9 +22,7 @@ const Post = ({ post }) => {
   let user = "super default user";
   /* TODO: find out which user has this id and use the name instead of this id */
   if (post.fields.userref.sys.id) user=post.fields.userref.sys.id;
-
-
-
+ 
   return (
     <Card className="bg-dark text-white">
       <Card.Img src={image} alt={title} />
@@ -32,6 +30,11 @@ const Post = ({ post }) => {
         <Card.Title>{title}</Card.Title>
         <Card.Text>
           {description}
+        </Card.Text>
+        <Card.Text>
+          {post.user.firstname} 
+          {post.user.lastname} 
+          {post.user.email} 
         </Card.Text>
         <Card.Text>{rating}</Card.Text>
         <Card.Text>{user}</Card.Text>

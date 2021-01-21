@@ -12,7 +12,7 @@ import "./App.css";
 
 export default function App() {
   const [userData, setUserData] = useState([]);
-  const [postsDataForUsers, setPostsDataForUsers] = useState([]);
+  const [postsDataForUsers, setPostsDataForUsers] = useState();
 
   const getAllPost = async () => {
     try {
@@ -27,42 +27,19 @@ export default function App() {
         userIds;
       const callPosts = await axios.get(getURLDynamic);
       setUserData(getUserData);
-      setPostsDataForUsers(callPosts.data.items);
+      setPostsDataForUsers(callPosts);
     } catch (err) {
       console.error(err);
     }
   };
 
-  const logFunction = () => {
-    console.log("userData   )): ");
-    console.log(userData);
-
-    console.log("postsDataForUsers  ");
-    console.log(postsDataForUsers);
-    console.log("postsDataForUsers[0].fields.userref.sys.id   ");
-    console.log(postsDataForUsers[0].fields.userref.sys.id); // UserREferenzID
-    console.log(postsDataForUsers[0].fields.description); // Description
-    console.log(postsDataForUsers[0].fields.title); // Title
-    console.log(postsDataForUsers[0].fields.rating); // Rating
-    console.log(postsDataForUsers[0].fields.webimage); // Webimage
-  };
 
   useEffect(() => {
     getAllPost();
   }, []);
 
   return (
-    <div className="App">
-      <button
-        onClick={() => {
-          console.log("logFunction()");
-          logFunction();
-        }}
-      >
-        {" "}
-        logFunction() !
-      </button>{" "}
-      <br />
+    <div className="App"> 
       <NavBar />
       <Formular />
       <Switch>
