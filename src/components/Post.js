@@ -32,8 +32,8 @@ const Post = ({ post }) => {
           {description}
         </Card.Text>
         <Card.Text>
-          {post.user.firstname} 
-          {post.user.lastname} 
+          {post.user.firstname} &nbsp;
+          {post.user.lastname} <br/> 
           {post.user.email} 
         </Card.Text>
         <Card.Text>{rating}</Card.Text>
