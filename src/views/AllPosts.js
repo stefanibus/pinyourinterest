@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 /* https://react-bootstrap.github.io/components/cards/#card-columns */
 import PostGrid from "../components/PostGrid";
 
-const AllPosts = ({ filterData, hello }) => {
+const AllPosts = ({ filterData }) => {
   return (
     <Container id="allposts">
       <Row>

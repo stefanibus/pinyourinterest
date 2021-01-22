@@ -5,7 +5,7 @@ const PostGrid = ({ listPosts }) => {
   let allPosts;
   if (listPosts.items && listPosts.items.length > 0) {
     allPosts = listPosts.items.map((post, index) => {
-      // map-function to compa  re userArrayID with userID
+      // map-function to compare userArrayID with userID
       const userID = post.fields.userref.sys.id;
       const userArray = listPosts.includes.Entry;
       userArray.map((i, index) => {
@@ -18,24 +18,6 @@ const PostGrid = ({ listPosts }) => {
       return <Post post={post} key={index} />;
     });
   }
-
-  // const allPosts =
-  //   listPosts.items.length > 0
-  //     ? listPosts.items.map((post, index) => {
-  //         console.log("listPosts.items", listPosts.items);
-  //         // map-function to compare userArrayID with userID
-  //         const userID = post.fields.userref.sys.id;
-  //         const userArray = listPosts.includes.Entry;
-  //         userArray.map((i, index) => {
-  //           // find matching ID Values
-  //           if (i.sys.id == userID) {
-  //             // add relevant user Data to the post-iteration
-  //             post.user = i.fields;
-  //           }
-  //         });
-  //         return <Post post={post} key={index} />;
-  //       })
-  //     : [];
 
   return (
     <>

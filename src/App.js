@@ -69,11 +69,10 @@ export default function App() {
           Reset Posts
         </button>
       )}
-
       <Formular filterPost={filterPost} />
       <Switch>
         <Route path="/allposts">
-          <AllPosts filterData={filterData} hello="some random text" />
+          <AllPosts filterData={filterData} />
         </Route>
         <Route path="/bestratedposts">
           <BestRatedPosts />
