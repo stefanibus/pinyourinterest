@@ -34,7 +34,7 @@ export default function App() {
     setFilterData(initialPostsDataForUsers);
   };
 
-  const getAllPost = async (handlefilter) => {
+  const getAllPost = async () => {
     try {
       const getUserData = await axios.get(
         "https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=users"
