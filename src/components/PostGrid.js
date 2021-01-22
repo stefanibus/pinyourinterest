@@ -10,11 +10,11 @@ const PostGrid = ( {listPosts} ) => {
         const userID = post.fields.userref.sys.id 
         const userArray = listPosts.data.includes.Entry   
         /* FIXME: "Array.prototype.map() expects a return value from arrow function. [13, 34]"*/
-        userArray.map((user, index) => { 
+        userArray.map((userItem, index) => { 
           // find matching ID Values 
-          if (user.sys.id.toString() === userID.toString()) { 
+          if (userItem.sys.id.toString() === userID.toString()) { 
             // add relevant user Data to the post-object 
-            post.user = user.fields 
+            post.user = userItem.fields 
           } 
         })   
         return  <Post post={post} key={index} />  
