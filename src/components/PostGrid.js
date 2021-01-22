@@ -26,6 +26,3 @@ const PostGrid = ( {listPosts} ) => {
 };
 
 export default PostGrid;
-
- 
- 

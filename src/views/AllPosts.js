@@ -7,7 +7,6 @@ import Row from "react-bootstrap/Row";
 import PostGrid from "../components/PostGrid";
 
 const AllPosts = ({ postsDataForUsers }) => {
-
   return (
     <Container id="allposts">
       <Row>
