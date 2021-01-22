@@ -13,7 +13,7 @@ const PostGrid = ( {listPosts} ) => {
         userArray.map((user, index) => { 
           // find matching ID Values 
           if (user.sys.id.toString() === userID.toString()) { 
-            // add relevant user Data to the post-iteration 
+            // add relevant user Data to the post-object 
             post.user = user.fields 
           } 
         })   
