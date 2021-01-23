@@ -1,0 +1,323 @@
+PinYourInterest
+
+
+FRAGEN / GEDANKEN 
+	- https://trello.com/c/FbkBiThZ/37-create-view-component-allposts
+	- Merge und so weiter 
+	- 
+
+
+
+BOOTSTRAP-SESSION 
+	- created Dev Branch and then MyNewBranch, and then deleted it all due to errors 
+	- re-created Dev Branch 
+	- installed react-router-dom
+	- set default Component in NavLink  
+ 	- created 404 page 
+	- installed boosttrap in separate component 
+	- clean up  
+	-   // Moved the NavBar into this external Component called NavBar.js 
+		// More Documentation can be found here:  
+		// https://github.com/react-bootstrap/react-router-bootstrap
+		// https://www.pluralsight.com/guides/using-react.js-with-bootstrap
+		// https://react-bootstrap.github.io/components/navbar/
+		// FORMS https://medium.com/dev-genius/react-bootstrap-navbars-7853c7b9f349
+		// FORMS https://m.pardel.net/react-and-bootstrap-4-part-1-setup-navigation-d4767e2ed9f0
+		// NAVBAR https://mdbootstrap.com/docs/react/navigation/navbar/
+		// SIDENAV https://mdbootstrap.com/docs/react/navigation/sidenav/
+		// SIDENAV better approach ==> https://reactjsexample.com/minimal-side-navigation-component-for-react/
+		// https://react-bootstrap.github.io/components/navs/
+		// https://classroom.google.com/u/0/c/MzQ1MzE3OTk3MTla/a/MjUyMDI4MzA0NjM5/details
+
+ 
+
+
+
+  POSTMAN SESSION    
+	- API Base URL   https://api.contentful.com 
+	- space ID  	ifwqcmbkw16n 
+	- Content Delivery API - access token  	UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4
+	- curl https://cdn.contentful.com/spaces/ifwqcmbkw16n/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4
+	- curl https://cdn.contentful.com/spaces/some_other_space/entries?access_token=b4c0n73n7fu1
+
+	- https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4
+
+	- https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=posts
+
+
+
+
+	- USER_REFERENCE // content_type=posts&fields.userref.sys.id
+	- what was this? https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=posts&fields.userref.sys.id=6eCJKi4fMxQPQZCBRUF1dh
+
+
+	- ALL POSTS // &content_type=posts
+		DOKUMENTATION 
+			https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types/content-type/get-a-single-content-type/console
+		URL 
+			https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/content_types/posts?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4
+
+	-  // FILTER VALUE ONLY [MATCH] //  &fields.{field_id}[match]={value}
+		DOKUMENTATION
+			https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/full-text-search-on-a-field/query-entries/console
+		URL fielname title has string klettern
+			https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=posts&fields.title[match]={klettern}
+
+	- BEST FIVE ENTRIES // URL fieldname rating is 5
+		DOKU
+			https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/ranges/query-entries/console
+		URL
+			https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=posts&fields.rating[gte]=5
+
+
+ 
+
+
+
+
+
+
+
+
+unsplash 
+
+https://api.unsplash.com/search/photos?query=bouldering&client_id=9I2HQPlDYMbkk_h5gnx2nwYs8lmtVErQiZyd4O6cGG0
+
+
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+
+
+
+
+
+
+
+
+
+
+TASK DESCRIPTION 
+
+
+What should be done
+	- Contentful content types for user, post created
+	- 4 users created, 20 posts created (entries)
+	- Initiate the react project
+	- Create a react app that uses that data on different routes
+	- Link the project to github, set up collaborators
+	the rest of the steps can be done in any order
+	- install and import react-router-dom in App.js
+	- Define 2 main routes (you can create more if you want to enhance your app) one route for allposts, the second for the best rated posts
+	Steps required 
+	- Create two view components, one will be responsible to display on /allposts the other on /bestratedposts
+
+Objectives left
+allposts view
+	- fetch all posts entries (axios) and display them in a card like component. The user referenced in the post must be displayed in the card (firstname lastname for example)
+	- create an input field, a submit button
+	- on submit, fetch only the entries where the title contains the input text (https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/full-text-search-on-a-field/query-entries/console)
+	- update the state with the newly fetched entries
+
+best rated view
+	- fetch all entries where the grade is of 4 or more, order the entries by grade (https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/order)
+
+Bonus 
+	- styling => React bootstrap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Group-Work with Janis and Waldemar 
+
+
+
+
+Contentful login with github
+create a new space 
+add users in left menu as dev
+
+
+
+create content model  CAR 
+text color 
+number Wheels 
+Image media file 
+reference to the Brand! 
+
+create content model BRAND 
+reference iduser 
+brands 
+
+create content model USER
+porfile pic 
+lastname 
+Email 
+(associate them to your "Posts")
+
+
+settiings api keys ADD KEY
+by default
+grab content delivery api 
+see API COCUMENTATION for ContentFul and grab your API URL 
+
+entries Collection (IS WAHT?) 
+
+goal is to get only a certain part of the entire contentFul CONTENT 
+, for thet I can read the DOCS for CONNTENT TYPE 
+
+
+
+use restAPI with react 
+work with postmen first 
+see table of propertires in the api return statement (json) 
+
+construct your URL with spaceID and AcccessToken 
+
+
+user and post are linked on the page 
+
+definition of a post = 
+image description title 
+
+definition of the user =  
+
+POSTMAN 
+post url 
+then add space id 
+and master id  
+and acessToken 
+GetAll Entries save in Pinterest on Postman 
+content type Param (see in contentful) 
+
+
+
+REACT  (NOT BEFORE WENDSDAY)
+items and images are seperated, they shall be matched in react  
+
+
+
+ 
+
+gitHub  
+cont ty users 
+cont ty posts 
+entries 
+
+react 
+create components 
+comp list the posts 
+axios request 
+ - users all  
+ - just one 
+ - nnn
+rautes tree 
+
+special request = 
+get the best rated post please 
+
+first understand contentful 
+
+
+post for each image
+
+user-content
+
+
+
+
+###############################################
+
+
+Here is the work summed up until Wednesday and time repartition recommendations : 
+Monday - Thursday : Full Focus on contentfull
+Until next week : Focus on React
+
+How to organise first tasks
+- Create an organization, invite people to it
+- Create a space on contentfull
+- Create 2 different content types
+- Create 20 entries of Post Content TYpe and 4 entries of User content type
+ Remember each user needs a user reference so create user entries before Post 
+:checkered_flag: At this point you will have configured your API, next is testing
+ Testing : 
+- Open up Postman ( this is a work required by everyone )
+- Try fetching all posts
+- Try fetching posts with a filter (using search tool form contentful documented here : https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/full-text-search-on-a-field) Where the field has an example value you will chose
+- Try fetching posts where the grade field value is 5 (using search operator again: https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/full-text-search )
+This is the checklist you need for wednesday evening :
+- Organisation, Space setup 
+- 2 Content types available : User, Post
+- 4 User entries, 20 Posts inserted
+- Everyone tested endpoints for fetching all posts, all posts with a filtered term, a rating of 5
+Content type example
+# User
+firstname : text
+lastname : text
+email : text
+# Post
+title : text
+description : text
+image : media
+userRef : Reference to a User entry
+rating : integer from 0 to 5
+
+
+Here is the link to the main documentation : 
+
+https://www.contentful.com/developers/docs/references/content-delivery-api/
+﻿
+
+
+
+
+
+
+
+Here is an update of the group work
+
+What should be done
+- Contentful content types for user, post created
+- 4 users created, 20 posts created (entries)
+
+Objectives left
+- Create a react app that uses that data on different routes
+
+Steps required
+- Initiate the react project
+- Link the project to github, set up collaborators
+the rest of the steps can be done in any order
+- install and import react-router-dom in App.js
+- Define 2 main routes (you can create more if you want to enhance your app) one route for allposts, the second for the best rated posts
+- Create two view components, one will be responsible to display on /allposts the other on /bestratedposts
+
+allposts view
+- fetch all posts entries (axios) and display them in a card like component. The user referenced in the post must be displayed in the card (firstname lastname for example)
+- create an input field, a submit button
+- on submit, fetch only the entries where the title contains the input text (https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/full-text-search-on-a-field/query-entries/console)
+- update the state with the newly fetched entries
+
+best rated view
+- fetch all entries where the grade is of 4 or more, order the entries by grade (https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/order)
+Du hast keine Berechtigung, in diesem Kanal Nachrichten zu versenden.
+
+
+

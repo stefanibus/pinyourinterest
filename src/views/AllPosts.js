@@ -9,15 +9,11 @@ import PostGrid from "../components/PostGrid";
 const AllPosts = ({ postsDataForUsers }) => {
 
   return (
-    <Container id="allposts">
+    <Container id="allposts" className="textLeft">
       <Row>
         <div>
           <div>
-            <h1>All your Posts</h1>
-            <p>
-              To easily filter <b>'All your Posts'</b>
-            </p>
-            <p>please use the above Input-field.</p>
+            <h1>All your Posts</h1> 
           </div>
         </div>
       </Row>

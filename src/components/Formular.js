@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 
 const Formular = () => {
   return (
-    <div>
+    <div id="formWrapper">
       <Form inline>
         <Form.Label htmlFor="inlineFormInputName2" srOnly>
           Name

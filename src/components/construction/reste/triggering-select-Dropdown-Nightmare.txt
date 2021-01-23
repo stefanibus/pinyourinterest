@@ -1,0 +1,247 @@
+triggering-select-Dropdown-Nightmare.txt  
+
+
+                  // console.log('ourArray');  
+                 // console.log(ourArray);
+                 // console.log('ourArray = firstname');  
+                 // console.log(ourArray.fields.firstname); 
+                 // let firstname = ourArray.fields.firstname;
+                 // console.log(ourArray.fields.firstname);
+  
+
+
+     triggering a USER-ID-API-CALL (Static Example )  <br/> 
+
+
+        <div onClick={() => triggering('4CrLLnhKykpOV9fu2v7Odg')}>Yo Go </div>  
+        <div onClick={() => triggering('14U1y0dzbaaqOkvjr9kW4T')}>Waldemar</div>  
+        <div onClick={() => triggering('6eCJKi4fMxQPQZCBRUF1dh')}>Janis Merkel</div>  
+        <div onClick={() => triggering('7gusLBhWbTDHN2ax00HnEk')}>ClimbingCat </div>  
+       { <div onClick={() => triggering('YrNbyp3ac9ibMecerzmv1')} >MonPoke </div>  }
+
+ 
+
+
+
+
+
+
+
+
+
+
+     // console.log('userArray');
+     // console.log(userArray);
+     // console.log('userArray  Firstname ');
+     // console.log(userArray.data.includes.Entry[0].fields.firstname);
+     // console.log('userArray   ID  ');
+     // console.log(userArray.data.includes.Entry[0].sys.id);
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                 console.log('userArray');
+            console.log(userArray);  // IT IS UNDEFINED 
+            // console.log('userArray.data.includes.Entry');
+            // console.log(userArray.data.includes.Entry);
+            // let firstname = userArray.data.includes.Entry.fields.firstname;
+            // console.log('firstname');
+            // console.log(firstname);
+            // let lastname = userArray.fields.lastname;
+            // let email = userArray.fields.email;
+            // let id = userArray.sys.id;
+
+            // const firstname = userArray.fields.firstname;
+            // console.log('firstname');
+            // console.log(firstname);
+            // const lastname = userArray.fields.lastname; 
+            // const id = userArray.sys.id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      const callAPI = () => {  console.log('test '); }  
+
+ 
+
+            // console.log('userArray');
+            // console.log({userArray});
+ 
+      //  ARIA-QUESTION : UNABLE TO ENSURE THIS FUNCTION IS CALLED ONLY AFTER THE STATE_VARIABLE is available 
+      // const handleOnClick = arrayOfUserData ? arrayOfUserData.data.includes.Entry.map((arrayOfUserData, index) => { 
+
+      // in this Func arrayOfUserData  seems to be out of Scope 
+      // 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      const checkForPending = (item) => {
+        userArray ? 
+           ( 
+           // handleOnClick(item);
+           // console.log('item yiha');
+           handleOnClick(item) ) 
+
+        : 
+          console.log('pending userTest '); 
+        }
+
+
+
+        //checkForPending(item); 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // why is arrayOfUserData not available?  
+      // At the time the USER will call this Event,  
+      // it should be available
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       react MAP Function with keys 
+     {data.map((iteration, index) => (
+        <User key={iteration.id} userData={iteration} />
+      ))}
+
+do not use map if your aim is to do  something.filter()   
+ALWAYS add a KEY to your mapped Elements 
+Documentation 
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Map 
+more info potentially here...
+
+
+
+SIMPLE EXAMPLE 
+
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <li key={number.toString()}>
+      {number}
+    </li>
+  );
+  return (
+    <ul>{listItems}</ul>
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+);
+
+
+
+
+ANOTHER MAP EXAMPLE  WITH KEYS 
+function NumberList(props) {
+  const numbers = props.numbers;
+  return (
+    <ul>
+      {numbers.map((numberIteration, index) =>
+        <SomeListItem key={number.toString()}
+                  value={number} />
+      )}
+    </ul>
+  );
+}
+
+
+

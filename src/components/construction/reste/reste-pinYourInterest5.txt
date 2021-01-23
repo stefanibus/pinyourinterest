@@ -1,0 +1,17 @@
+    axios
+      .get(
+        "https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=users"
+      )
+      .then((response) => {
+        // console.log(response);
+        // console.log(response.data);
+        // console.log(response.data.items);
+        // console.log(response.data.items[1]);
+        // console.log(response.data.items[1].fields);
+        // console.log(response.data.items[1].fields.firstname);
+        // console.log(response.data.items[1].sys.id);
+        setUserData(response.data.items);
+        console.log('userData');
+        console.log(userData);
+      })
+      .catch((error) => console.error(error));

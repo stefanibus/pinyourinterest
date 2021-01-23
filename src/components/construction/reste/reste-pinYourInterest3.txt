@@ -1,0 +1,51 @@
+
+
+
+do not use map if your aim is to do  something.filter()   
+ALWAYS add a KEY to your mapped Elements 
+Documentation 
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Map 
+more info potentially here...
+
+
+
+SIMPLE EXAMPLE 
+
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <li key={number.toString()}>
+      {number}
+    </li>
+  );
+  return (
+    <ul>{listItems}</ul>
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+);
+
+
+
+
+ANOTHER MAP EXAMPLE  WITH KEYS 
+function NumberList(props) {
+  const numbers = props.numbers;
+  return (
+    <ul>
+      {numbers.map((numberIteration, index) =>
+        <SomeListItem key={number.toString()}
+                  value={number} />
+      )}
+    </ul>
+  );
+}
+
+
+

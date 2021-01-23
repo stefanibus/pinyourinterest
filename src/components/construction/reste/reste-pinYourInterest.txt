@@ -1,0 +1,171 @@
+reste-pinYourInterest.txt
+
+
+
+  const logFunction = () => {
+    console.log("userData   )): ");
+    console.log(userData);
+
+    console.log("postsDataForUsers  ");
+    console.log(postsDataForUsers);
+    console.log("postsDataForUsers[0].fields.userref.sys.id   "); 
+    console.log(postsDataForUsers[0].fields.userref.sys.id); // UserREferenzID
+
+
+        // console.log(response.data.items[1].fields.firstname);
+
+    console.log('postsDataForUsers[0].fields.description'); // Description
+    console.log(postsDataForUsers[0].fields.description); // Description
+    console.log('postsDataForUsers[0].fields.title'); // Title
+    console.log(postsDataForUsers[0].fields.title); // Title
+    console.log('postsDataForUsers[0].fields.rating'); // Rating
+    console.log(postsDataForUsers[0].fields.rating); // Rating
+    console.log('postsDataForUsers[0].fields.webimage'); // Webimage
+    console.log(postsDataForUsers[0].fields.webimage); // Webimage
+ 
+
+  };
+
+
+
+
+
+
+
+
+
+const identifyUser
+
+	ALL USERS  wir wollen einen Array aus Usern mit  vier Values: ID FirstnameLastName Email     
+		https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=users
+
+
+
+const find relevant PostData 
+
+ALL POSTS kommen OHNE USER (data) aber dafür mit UserRef 
+	https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=posts
+
+	ALL POSTS MIT NUR EINEM USER WIE OBEN ABER ZUSÄTZLICH MIT:
+		&fields.userref.sys.id=6eCJKi4fMxQPQZCBRUF1dh
+	ALL POSTS MIT ZWEI!!! USERN WIE OBEN ABER ZUSÄTZLICH MIT:
+		&fields.tags[all]=flowers,accessories    
+			ALSO
+			https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=posts&fields.userref.sys.id[14U1y0dzbaaqOkvjr9kW4T,6eCJKi4fMxQPQZCBRUF1dh]
+
+
+
+
+
+
+        console.log('getArrayOfUserIDs only the relevant  UsersIDs in an array via getArrayOfUserIDs(): ')
+        console.log(i);
+
+
+
+
+
+
+        console.log('do axios Request on all posts with a filter to display merely those Posts from relevant  UsersIDs')
+        // 
+        console.log('AddAllUserIDsToRequestURL');
+        console.log(AddAllUserIDsToRequestURL);
+
+        //
+
+
+
+
+                // console.log('getURLDynamic : ');
+        // console.log(getURLDynamic);
+
+
+
+
+
+        // STATIC URL TESTING 
+        // let getURLStatic = "https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=posts&fields.userref.sys.id[in]=14U1y0dzbaaqOkvjr9kW4T,4CrLLnhKykpOV9fu2v7Odg,7gusLBhWbTDHN2ax00HnEk,6eCJKi4fMxQPQZCBRUF1dh,YrNbyp3ac9ibMecerzmv1" ;
+         // let getURLStatic = "https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=posts&fields.userref.sys.id[all]=4CrLLnhKykpOV9fu2v7Odg" ;
+        // console.log('getURLStatic : '); console.log(getURLStatic);
+
+
+
+
+
+###################
+
+
+         <button onClick={  () => {getAllUserData() 
+                   console.log('getAllUserData'); 
+         }} >getAllUserData   by  running the function call getAllUserData()  </button>
+         <br/>
+
+         <button onClick={ () => { 
+        console.log('userData should be in the UseState now as follows: ') ;
+        console.log(userData) ; 
+         }} >console.log('userData should be in the useState now') </button>
+         <br/>
+
+         
+         <button onClick={ () => { 
+        console.log('getArrayOfUserIDs(userData)') ;
+        console.log(getArrayOfUserIDs(userData)) ; 
+         }} >console.log('getArrayOfUserIDs(userData)')</button>
+         <br/>
+
+
+          
+         <button onClick={ () => { 
+            console.log('ourArrayOfUserIDs')
+            console.log(ourArrayOfUserIDs) 
+         }} >console.log('ourArrayOfUserIDs')</button>
+         <br/> 
+        <br/>
+ 
+          
+         <button onClick={ () => { 
+            console.log('getAllPostsFromUser(ourArrayOfUserIDs)');
+            getAllPostsFromUser(ourArrayOfUserIDs);
+           
+         }} >  console.log('getAllPostsFromUser(ourArrayOfUserIDs)')</button>
+         <br/>
+        <br/>
+
+ 
+          
+         <button onClick={ async () => {  
+             
+              setPostsDataForUsers(  await getAllPostsFromUser(ourArrayOfUserIDs));
+
+           
+         }} >  
+                getAllPostsFromUser(ourArrayOfUserIDs);  XXXXXXXXXXXXXXXx </button>
+         <br/>
+
+
+
+
+
+          <button onClick={getAllUserData} >getAllUserData (not needed as a button) = function is executed on useEffect)</button>
+          <br/>
+          <button onClick={() => {getAllPostsFromUser(getArrayOfUserIDs)}}>getAllPostsFromUser</button>
+          <br/>
+          <button onClick={() => {console.log(getAllUserData)}}>console log getAllUserData</button>
+          <br/>
+          <button onClick={() => {getAllUserData()}}>DO IT  getAllUserData</button>
+          <br/>
+          <button onClick={() => {getArrayOfUserIDs(getAllUserData)}}>DO IT=  getArrayOfUserIDs</button>
+          <br/>
+
+
+
+
+
+
+
+
+
+
+
+
+        

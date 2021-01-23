@@ -1,35 +1,97 @@
-const Dropdown = ({triggering, userArray}) => {  
+import React, { useState } from 'react';
+// import onClickOutside from 'react-onclickoutside';   // DOES NOT WORK ON FUNCTIONAL COMPONENTS , see Component called ClickOutsideTest.js
+import './dropdown.css';
  
-/*    const userTest = userArray ? userArray.data.includes.Entry.map((arrayOfUserData, index) => { 
-        const firstname = arrayOfUserData.fields.firstname;
-        const lastname = arrayOfUserData.fields.lastname;
-        const email = arrayOfUserData.fields.email;
-        const id = arrayOfUserData;
-        console.log('id');
-        console.log(id);
-        // const triggerThis = (val) => triggering(val);
-        // cannot  place the below line into the return statement  
-        // triggerThis={() => firstname('something')} 
-        return  <div className="userCklickHere">{firstname} {lastname} </div>   
-    }) 
-     : 'pending userTest '  ;*/
-   
+// DOCUMENTATION  DropDown Select-Menu 
+// https://www.youtube.com/watch?v=t8JK5bVoVBw
+// https://github.com/karlhadwen/react-dropdown-menu/tree/master/src
   
+
+// THIS IS OUR COMPONENT - Multi-Select is NOT yet established 
+function Dropdown({ userArray, userInformation, triggering, title, multiSelect = false }) {
+ 
+        
+
+            const [open, setOpen] = useState(false);
+            const [selection, setSelection] = useState([]);
+            const toggle = () => setOpen(!open);
+            Dropdown.handleClickOutside = () => setOpen(false);
+
+       
+            function handleOnClick(item) {
+        
+              if (!selection.some(current => current.id === item.id)) {
+                if (!multiSelect) {
+                  setSelection([item]);
+                } else if (multiSelect) {
+                  setSelection([...selection, item]); 
+                }
+              } else {
+                  let selectionAfterRemoval = selection;
+                  selectionAfterRemoval = selectionAfterRemoval.filter(
+                    current => current.id !== item.id
+                  );
+                  setSelection([...selectionAfterRemoval]); 
+              }
+            }
+        
+            function isItemInSelection(item) { 
+              if (selection.some(current => current.id === item.id)) {
+                return true;
+              }
+              return false;
+            } 
+ 
+
   return (
-    <div> 
-      
-        {/*<div>{userTest} </div> */}
+    <>   
+     <div className="dd-wrapper">
+      <div
+        tabIndex={0}
+        className="dd-header"
+        role="button"
+        onKeyPress={() => toggle(!open)}
+        onClick={() => toggle(!open)}
+      >
+        <div className="dd-header__title">
+          <p className="dd-header__title--bold">{title}</p>
+        </div>
+        <div className="dd-header__action">
+          <p>{open ? 'Close' : 'Open'}</p>
+        </div>
+      </div>
+      {open && (
+        <ul className="dd-list">
+ 
+            {/*   
+            the below Dropdown must have a different State  than  "userArray"        
+            the below Dropdown Component cannot use the same userArray due to the State: 
+            the dropdown-Elements would otherwise be filtered undesiredly, (test this with userArray)
+            this DropDown Component currently relies on the State-Value: "userInformation"      
+            there is no other reason than the below Select-Element to use the  State-Variable userInformation inside of this app 
+            */}
+              {userInformation.data.items.map((item, index) => {  
+                return (  
+                <li className="dd-list-item" key={item.sys.id}>
+                  <button type="button" onClick={() => {handleOnClick(item); triggering(item.sys.id);   }     }>
+                    <span>{item.fields.firstname} {item.fields.lastname} </span>
+                    <span>{isItemInSelection(item) && 'Selected'}</span>
+                  </button>
+                </li>
+             )} )} 
 
-
-        <div onClick={() => triggering('4CrLLnhKykpOV9fu2v7Odg')}>Yo Go </div>  
-        <div onClick={() => triggering('14U1y0dzbaaqOkvjr9kW4T')}>Waldemar</div>  
-        <div onClick={() => triggering('6eCJKi4fMxQPQZCBRUF1dh')}>Janis Merkel</div>  
-        <div onClick={() => triggering('7gusLBhWbTDHN2ax00HnEk')}>ClimbingCat </div>  
-        <div onClick={() => triggering('YrNbyp3ac9ibMecerzmv1')} >MonPoke </div>  
-
-
-     </div>
+        </ul>
+      )}
+    </div>
+  </>  
   );
-};
+}
 
-export default Dropdown 
+
+
+/*const clickOutsideConfig = {
+  handleClickOutside: () => Dropdown.handleClickOutside,
+};*/
+
+//export default onClickOutside(Dropdown, clickOutsideConfig);
+export default  Dropdown ; 

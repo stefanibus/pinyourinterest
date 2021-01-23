@@ -1,0 +1,46 @@
+
+
+LESBARAR MACHEN 
+
+
+        // console.log(response);
+        // console.log(response.data);
+        // console.log(response.data.items);
+        // console.log(response.data.items[1]);
+        // console.log(response.data.items[1].fields);
+        // console.log(response.data.items[1].fields.firstname);
+        // 
+
+
+
+        // console.log('postsDataForUsers: ' ); 
+        // console.log( postsDataForUsers  );
+
+ 
+        // console.log('postsDataForUsers.data: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ): ');
+        // console.log(postsDataForUsers.data);
+ 
+ 
+        // console.log('postsDataForUsers.data.includes (relevant USERS? are 4 and 7  )): ');
+        // console.log(postsDataForUsers.data.includes);
+
+        // console.log('postsDataForUsers.data.includes.Asset ( POSTS --> NUR RELEVANT_RELEVANTE :  WIE IN DER URL ANGEGEBEN  )): ');
+        // console.log(postsDataForUsers.data.includes.Asset);
+
+        // console.log('postsDataForUsers.data.includes.Asset[0].fields.description): ');
+        // console.log(postsDataForUsers.data.includes.Asset[0].fields.description);
+
+        // console.log('postsDataForUsers.data.includes.Entry ( USER --> NUR RELEVANT_RELEVANTE :  WIE IN DER URL ANGEGEBEN   )): ');
+        // console.log(postsDataForUsers.data.includes.Entry);
+
+        // console.log('postsDataForUsers.data.includes.Entry[0].fields.firstname (relevant USERS )): ');
+        // console.log(postsDataForUsers.data.includes.Entry[0].fields.firstname);
+
+
+
+
+
+        // console.log('postsDataForUsers Test my assumption');
+        // console.log(postsDataForUsers);
+
+        

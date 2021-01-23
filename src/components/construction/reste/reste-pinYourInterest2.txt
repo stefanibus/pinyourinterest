@@ -1,0 +1,30 @@
+
+
+
+	- USER_REFERENCE // content_type=posts&fields.userref.sys.id
+	- what was this? https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=posts&fields.userref.sys.id=6eCJKi4fMxQPQZCBRUF1dh
+
+
+	- ALL POSTS // &content_type=posts
+		DOKUMENTATION 
+			https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-types/content-type/get-a-single-content-type/console
+		URL 
+			https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/content_types/posts?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4
+		URL BESSER 
+			https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=posts
+
+
+
+	-  // FILTER VALUE ONLY [MATCH] //  &fields.{field_id}[match]={value}
+		DOKUMENTATION
+			https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/full-text-search-on-a-field/query-entries/console
+		URL fielname title has string klettern
+			https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=posts&fields.title[match]={klettern}
+
+	- BEST FIVE ENTRIES // URL fieldname rating is 5
+		DOKU
+			https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/ranges/query-entries/console
+		URL
+			https://cdn.contentful.com/spaces/ifwqcmbkw16n/environments/master/entries?access_token=UtQ8Fkc_XdWNv24l0dq_QQAWVst5MZaGOAIKr6MvOf4&content_type=posts&fields.rating[gte]=5
+
+
