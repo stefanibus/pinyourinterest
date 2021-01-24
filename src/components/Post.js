@@ -2,6 +2,8 @@ import Card from 'react-bootstrap/Card';
 import './post.css';
 
 const Post = ({ post }) => {
+  post.user ? console.log(post.user.email) : console.log("FEHLER");;
+
 /* title */
   let title = "super awesome default title";
   if (post.fields.title) title=post.fields.title;
@@ -18,10 +20,14 @@ const Post = ({ post }) => {
 /* rating */
   let rating = 0;
   if (post.fields.rating) rating=post.fields.rating
-/* user */
-  let user = "super default user";
+/* user data*/
+  let firstname = "super default firstname";
+  let lastname = "super default lastname";
+  let email = "super default email";
   /* TODO: find out which user has this id and use the name instead of this id */
-  if (post.fields.userref.sys.id) user=post.fields.userref.sys.id;
+  if (post.user) firstname=post.user.firstname;
+  if (post.user) lastname=post.user.lastname;
+  if (post.user) email=post.user.email;
  
   return (
 
@@ -39,10 +45,9 @@ const Post = ({ post }) => {
         </Card.Text>        <Card.Title>{title}</Card.Title>
         <Card.Text>
           {description}
-        </Card.Text>
-
+        </Card.Text> 
         <Card.Text className="more right">{rating}</Card.Text> 
-      </Card.ImgOverlay>
+    </Card.ImgOverlay>
     </Card>
   );
 };

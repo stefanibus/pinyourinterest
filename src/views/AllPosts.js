@@ -6,7 +6,8 @@ import Row from "react-bootstrap/Row";
 /* https://react-bootstrap.github.io/components/cards/#card-columns */
 import PostGrid from "../components/PostGrid";
 
-const AllPosts = ({ postsDataForUsers }) => {
+
+const AllPosts = ({ filterData }) => {
 
   return (
     <Container id="allposts" className="textLeft">
@@ -19,8 +20,8 @@ const AllPosts = ({ postsDataForUsers }) => {
       </Row>
       <Row>
         {/* empty Array "THERE ARE NO POSTS" will be desplayed */}
-        {postsDataForUsers !== [] ? (
-          <PostGrid listPosts={postsDataForUsers} />
+        {filterData !== undefined ? (
+          <PostGrid listPosts={filterData} />
         ) : (
           <div>THERE ARE NO POSTS</div>
         )}
