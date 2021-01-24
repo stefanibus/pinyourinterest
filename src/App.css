@@ -1,3 +1,40 @@
+
+
+.navbar { 
+    width: 100%; 
+    z-index: 9;
+}
+
+#formWrapper { 
+    margin-top: 50px; 
+    top: 27px;
+    right: 6vw; 
+    z-index: 9;
+}
+
+ 
+@media only screen and (min-width: 576px) {    
+    .dd-wrapper, .navbar, #formWrapper {
+        position: absolute;
+    } 
+  } 
+ 
+
+#allposts { 
+    padding-top: 140px;
+}
+
+.centerPage { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; 
+}
+
+.textLeft { 
+    text-align: left;
+}
+  
 .App {
   text-align: center;
 }
