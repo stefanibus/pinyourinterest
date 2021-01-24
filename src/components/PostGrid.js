@@ -8,12 +8,14 @@ const PostGrid = ({ listPosts }) => {
       // map-function to compare userArrayID with userID
       const userID = post.fields.userref.sys.id;
       const userArray = listPosts.includes.Entry;
-      userArray.map((i, index) => {
+      userArray.map((i, index) => { 
+        // console.log("PostGrid has mapped entry of listPosts = : ", listPosts); 
         // find matching ID Values
-        if (i.sys.id == userID) {
+        if (i.sys.id === userID) {
           // add relevant user Data to the post-iteration
           post.user = i.fields;
         }
+        return ' '
       });
       return <Post post={post} key={index} />;
     });

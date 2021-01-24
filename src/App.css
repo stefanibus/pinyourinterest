@@ -20,7 +20,7 @@
   } 
  
 
-#allposts { 
+ #allposts, #bestRatedPosts { 
     padding-top: 140px;
 }
 

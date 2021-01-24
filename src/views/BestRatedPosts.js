@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import PostGrid from "../components/PostGrid";
 
 const BestRatedPosts = ({ bestRatedPosts }) => {
-  console.log("bestRatedPosts", bestRatedPosts);
+//   console.log("bestRatedPosts", bestRatedPosts); 
 
   return (
 
@@ -14,20 +14,19 @@ const BestRatedPosts = ({ bestRatedPosts }) => {
         <div>
           <div>
             <h1>Only the best rated Posts</h1>
-            <p>
-              To easily filter <b>'All your Posts'</b>
-            </p>
-            <p>please use the above Input-field.</p>
           </div>
         </div>
       </Row>
       <Row>
-        {/* empty Array "THERE ARE NO POSTS" will be desplayed */}
-        {bestRatedPosts !== {} ? (
+
+ 
+ {/* empty Array "THERE ARE NO POSTS" will be desplayed */}
+        {bestRatedPosts !== undefined ? (
           <PostGrid listPosts={bestRatedPosts} />
         ) : (
           <div>THERE ARE NO POSTS</div>
         )}
+ 
       </Row>
     </Container> 
   );
