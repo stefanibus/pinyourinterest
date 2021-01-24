@@ -51,7 +51,7 @@ For DEMO, go to: link may be added []()
 | Technologies / Tools | Used | Notes |
 | :------------------- | :--- | :---- |
 | [React](https://reactjs.org)| :white_check_mark:   |       |
-| [React-Axios](https://github.com/sheaivey/react-axios)| Data :white_check_mark:     |   Data Fetch    |
+| [React-Axios](https://github.com/sheaivey/react-axios)| :white_check_mark:     |   Data Fetch    |
 | JS ES6               | :white_check_mark:   |       |
 | JSX                  | :white_check_mark:   |       |
 | CSS3                 | :white_check_mark:   |       |
