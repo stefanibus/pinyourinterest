@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# PinYourInterest
+A WBS Coding School Team-Project (week 6 & 7)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+### Table of Contents
 
-In the project directory, you can run:
+- [PinYourInterest](#pinyourinterest)
+    - [Table of Contents](#table-of-contents)
+  - [Objective](#objective)
+  - [Project Overview](#project-overview)
+  - [Demo](#demo)
+  - [Technologies & Tools](#technologies--tools)
+  - [Resources](#resources)
+    - [Contentful - CMS](#contentful---cms)
+    - [React-Bootstrap](#react-bootstrap)
+    - [Environment Variables](#environment-variables)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Objective
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Create a tool that looks a lot like [Pinterest](https://www.pinterest.com/) with React.
 
-### `npm test`
+> Goal: Use the CMS to build data/endpoints and allow a react app to fetch this data as well as filter it out depending on several criterias
+>
+> Time: 2 weeks (2h+/day) 
+> 
+> Team-Size: 3
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Project Overview
+- [x] Create Contenttypes for Post and User on Contentful
+- [x] Create 4 User and 20 Post Entries on Contentful
+- [x] Test API Endpoints on Postman
+  - [x] all Entries
+  - [x] all Posts
+  - [x] Posts w/ rating 4 or more
+- [x] Create React App w/ two Routes & corresponding Views & fetch data from Contentful API
+  - [x] All Posts
+  - [x] Best Rated Postes
+- [x] Filter Entries by Text
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Demo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For DEMO, go to: link may be added []()
 
-### `npm run eject`
+## Technologies & Tools
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+| Technologies / Tools | Used | Notes |
+| :------------------- | :--- | :---- |
+| [React](https://reactjs.org)| :white_check_mark:   |       |
+| [React-Axios](https://github.com/sheaivey/react-axios)| Data :white_check_mark:     |   Data Fetch    |
+| JS ES6               | :white_check_mark:   |       |
+| JSX                  | :white_check_mark:   |       |
+| CSS3                 | :white_check_mark:   |       |
+| [React-Bootstrap](https://react-bootstrap.github.io)| :white_check_mark:   |        |
+| [Contentful](https://www.contentful.com/developers/) | :white_check_mark: | Content Delivery API |
+| [Postman](https://www.postman.com) | :white_check_mark: | API Test|
+| [Github](https://github.com)| :white_check_mark:   |       |
+| [Trello](https://trello.com/b/wcvE9jJZ/contentful-react)| :white_check_mark:   |   Project Organisation    |
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Resources
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Contentful - CMS
+[Contentful - Overview](https://www.contentful.com/help/contentful-overview/)
 
-## Learn More
+[Contentful Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Contentful - Filter entry by text](https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/search-parameters/full-text-search-on-a-field)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### React-Bootstrap
 
-### Code Splitting
+[Getting Started](https://react-bootstrap.github.io/getting-started/introduction)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[Navs](https://react-bootstrap.github.io/components/navs/)
 
-### Analyzing the Bundle Size
+[Cards](https://react-bootstrap.github.io/components/cards/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[Forms](https://react-bootstrap.github.io/components/forms/)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Environment Variables
+[Create-react-app - Environment Variables](https://create-react-app.dev/docs/adding-custom-environment-variables/)
