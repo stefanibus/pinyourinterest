@@ -8,7 +8,8 @@ const BestRatedPosts = ({ bestRatedPosts }) => {
   console.log("bestRatedPosts", bestRatedPosts);
 
   return (
-    <Container id="bestRatedPosts">
+
+    <Container id="bestRatedPosts"  className="bestratedposts  container  textLeft">
       <Row>
         <div>
           <div>
@@ -28,7 +29,7 @@ const BestRatedPosts = ({ bestRatedPosts }) => {
           <div>THERE ARE NO POSTS</div>
         )}
       </Row>
-    </Container>
+    </Container> 
   );
 };
-export default BestRatedPosts;
+export default BestRatedPosts; 

@@ -8,13 +8,17 @@ const PageNotFound = () => { return (
  			<h1>
  				404: 
  				<br/>
- 				This Link does not exist.
+ 				This Link does not exist. 
+ 				<br/>
+	            	<img alt="404" src={src}  />
+
 	 			<br/>
+	             Visit our&nbsp;
  		    	<Link to="/">
-	            Visit All your Posts here:
+	            Homepage 
 	 			<br/>
 	            	<img alt="404" src={src}  />
-	            </Link>
+	            </Link> 
  			</h1> 
  		    <h3>
             </h3>

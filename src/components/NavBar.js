@@ -34,13 +34,7 @@ const NavBar = () => {
           </LinkContainer>
         </Nav>
 
-        <Nav>
-          <LinkContainer to="/futureLink">
-            <div className="nav-link">More links</div>
-          </LinkContainer>
-          <LinkContainer to="/toggleTheme">
-            <div className="nav-link">Toggle Theme</div>
-          </LinkContainer>
+        <Nav>  
           <LinkContainer to="/UserLogin">
             <div className="nav-link">UserLogin</div>
           </LinkContainer>

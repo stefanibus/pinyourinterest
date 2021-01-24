@@ -14,7 +14,7 @@ const Formular = ({ filterPost }) => {
     }
   };
   return (
-    <div>
+    <div id="formWrapper">
       <Form inline>
         <Form.Label htmlFor="inlineFormInputName2" srOnly>
           Name
