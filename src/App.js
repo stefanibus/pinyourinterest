@@ -15,9 +15,9 @@ import "./App.css";
 // THE DROPDOWN-CLOSE FUNCTION CAN BE ENHANCED   // ESTABLISH ONE OF THE TWO COMPONENTS BELOW  [UNFINISHED BUSINESS] 
 // import ClickOutsideTest from "./components/construction/components_under_Construction/ClickOutsideTest.js"; // Does not work on Functional Components 
 // import UseOutsideAlerter from "./components/construction/components_under_Construction/OutsideAlerter.js"; // Does not work on Functional Components 
- 
 
 
+  
 
 export default function App() { 
   const [filterData, setFilterData] = useState({});
@@ -39,7 +39,7 @@ export default function App() {
     copyData.items = newArry;
 
     copyData.items.forEach((item) => {
-      console.log(item.fields.title);
+     // console.log(item.fields.title);
     });
     setFilterData(copyData);
   };
@@ -69,8 +69,8 @@ export default function App() {
           return iteration.sys.id; 
       }); 
       // Develop locally and Offline
-      const getURL_Offline_Localhost = 
-        "http://localhost/WBS/stefano/contentful/pinyourinterest/public/entries.json"
+      // const getURL_Offline_Localhost = 
+      //   "http://localhost/WBS/stefano/contentful/pinyourinterest/public/entries.json"
        // API-request URL   
       // getURLDynamic so abändern das nur die gefilterten Posts angezeigt werden filter() 
       const getURLDynamic =
@@ -118,16 +118,19 @@ export default function App() {
   const getBestRatedPosts = async() => {
     try {
       const callBestRatedPosts = await axios.get(bestRatedPostsURL);
-      setBestRatedPosts(callBestRatedPosts);
+      setBestRatedPosts(callBestRatedPosts.data);
     } catch (err) {
       console.error(err);
     }
   };
 
-    
-  
+   // {filterData !== undefined ?  
+   //  <PostGrid listPosts={filterData} />   :   
+   //  <div>THERE ARE NO POSTS</div>  }
+
+   
   return (
-    <div className="App">  
+    <div className="App">   
         <NavBar /> 
     
        {filterData && filterData !== initialPostsDataForUsers && (

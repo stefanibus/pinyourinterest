@@ -2,7 +2,7 @@ import Card from 'react-bootstrap/Card';
 import './post.css';
 
 const Post = ({ post }) => {
-//  post.user ? console.log(post.user.email) : console.log("FEHLER");;
+//   post.user ? console.log(post.user.email) : console.log("FEHLER");;
 
 /* title */
   let title = "super awesome default title";
@@ -31,15 +31,17 @@ const Post = ({ post }) => {
  
   return (
 
-    <Card className="bg-dark text-white">  
+    <Card className="bg-dark text-white">
       <Card.Img src={image} alt={title} />
       <Card.ImgOverlay>
         <Card.Text className="contact more left"> 
-            <span >
-              {post.user.firstname} &nbsp;
-              {post.user.lastname}, &nbsp;  
-              {post.user.email} </span>  
-            <img className="userImg" src="https://img.icons8.com/ios/452/user-male-circle.png" /> 
+            <span > 
+              {firstname} &nbsp;
+              {firstname} &nbsp;
+              {lastname}, &nbsp;  
+              {email} 
+               </span>  
+            <img alt="ImagePic" className="userImg" src="https://img.icons8.com/ios/452/user-male-circle.png" /> 
             {/*https://images.unsplash.com/profile-1606728664311-4bcc76a40e98image?ixlib=rb-1.2.1\u0026q=80\u0026fm=jpg\u0026crop=faces\u0026cs=tinysrgb\u0026fit=crop\u0026h=32\u0026w=32*/}
             
         </Card.Text>        <Card.Title>{title}</Card.Title>
