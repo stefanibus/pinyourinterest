@@ -21,17 +21,19 @@ import "./App.css";
 
 export default function App() { 
   const [filterData, setFilterData] = useState({});
+
+  const [postsDataForFilter, setInitalPostsDataForFilter] = useState({});
+  
   const [bestRatedPosts, setBestRatedPosts] = useState(); 
   const [initialPostsDataForUsers, setInitalPostsDataForUsers] = useState();
   const [userData, setUserData] = useState([]);
   
-  
-  
+ 
     const filterPost = (text) => {
     // const newArry = initialPostsDataForUsers.filter(postValue) =>
 
-    const copyData = { ...initialPostsDataForUsers };
-    const newArry = initialPostsDataForUsers.items.filter((postValue) => {
+    const copyData = { ...postsDataForFilter };
+    const newArry = postsDataForFilter.items.filter((postValue) => {
       return postValue.fields.title.toLowerCase().includes(text.toLowerCase());
     });
     copyData.items = newArry;
@@ -86,7 +88,8 @@ export default function App() {
       setInitalPostsDataForUsers(callPosts);
       //Save initial data to later reset.
       // STEFANO COMMENT ==>   I WILL NOT ALLOW THIS CHANGE DURING THE MERGE - - > I WILL LOOK INTO THIS LATER TO RE-ESTABLISH THE FILTER FUNCTION  
-      // setInitalPostsDataForUsers(callPosts.data);
+      
+      setInitalPostsDataForFilter(callPosts.data);
      
       setUserData(getUserData); 
       setFilterData(callPosts.data);
@@ -108,7 +111,7 @@ export default function App() {
   }, []);
   
   useEffect(() => {
-    getAllPosts();
+    getAllPost();
   }, []);
 
   

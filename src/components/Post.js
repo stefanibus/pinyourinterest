@@ -2,7 +2,7 @@ import Card from 'react-bootstrap/Card';
 import './post.css';
 
 const Post = ({ post }) => {
-  post.user ? console.log(post.user.email) : console.log("FEHLER");;
+//  post.user ? console.log(post.user.email) : console.log("FEHLER");;
 
 /* title */
   let title = "super awesome default title";
