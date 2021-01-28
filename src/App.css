@@ -12,7 +12,14 @@
     z-index: 9;
 }
 
- 
+
+/*RESTET BUTTON FOR THE FILTER INPUT FIELD */
+/*#root > div > button {
+  position: absolute;
+  top: 150px;
+}
+*/ 
+
 @media only screen and (min-width: 576px) {    
     .dd-wrapper, .navbar, #formWrapper {
         position: absolute;

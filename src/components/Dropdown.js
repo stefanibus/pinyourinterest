@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import onClickOutside from 'react-onclickoutside';   // DOES NOT WORK ON FUNCTIONAL COMPONENTS , see Component called ClickOutsideTest.js
-import './dropdown.css';
+import './dropdown.css'; 
+import OutsideClickHandler from 'react-outside-click-handler';
  
 // DOCUMENTATION  DropDown Select-Menu 
 // https://www.youtube.com/watch?v=t8JK5bVoVBw
@@ -9,8 +10,7 @@ import './dropdown.css';
 
 // THIS IS OUR COMPONENT - Multi-Select is NOT yet established 
 function Dropdown({ userArray, userInformation, triggering, title, multiSelect = false }) {
- 
-        
+  
 
             const [open, setOpen] = useState(false);
             const [selection, setSelection] = useState([]);
@@ -45,6 +45,16 @@ function Dropdown({ userArray, userInformation, triggering, title, multiSelect =
 
   return (
     <>   
+ 
+     <OutsideClickHandler
+      onOutsideClick={() => {  
+        console.log('open', open) 
+        if (open) {
+        toggle(); 
+        }
+
+      }}
+    >    
      <div className="dd-wrapper">
       <div
         tabIndex={0}
@@ -83,6 +93,10 @@ function Dropdown({ userArray, userInformation, triggering, title, multiSelect =
         </ul>
       )}
     </div>
+  
+   </OutsideClickHandler>
+
+  
   </>  
   );
 }
